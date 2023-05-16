@@ -1,0 +1,27 @@
+<div>
+    <div *ngIf="state.loaded">
+
+    </div>
+
+    <div *ngIf="state.loaded">
+        <div *ngFor="let part of parts()">
+            <p>
+                <b>
+                    URL:
+                </b>
+                &nbsp;
+                <span>{{ getUrlByPart(part) }}</span>
+            </p>
+
+            <p>
+                <b>
+                    Response:
+                </b>
+                &nbsp;
+                <span>
+              {{state[part]}}
+          </span>
+            </p>
+        </div>
+    </div>
+</div>
