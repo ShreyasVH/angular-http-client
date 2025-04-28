@@ -2,3 +2,7 @@ node_modules
 .envrc
 .idea
 .angular
+compile.log
+npmInstall.log
+angular.json
+dist/
