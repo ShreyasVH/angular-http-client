@@ -3,8 +3,8 @@
 
     </div>
 
-    <div *ngIf="state.loaded">
-        <div *ngFor="let part of parts()">
+    <section class="server" *ngIf="state.loaded">
+        <section class="verb" *ngFor="let part of parts()">
             <p>
                 <b>
                     URL:
@@ -22,6 +22,6 @@
               {{state[part]}}
           </span>
             </p>
-        </div>
-    </div>
+        </section>
+    </section>
 </div>
