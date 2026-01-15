@@ -1,12 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-server',
-    templateUrl: './server.component.html'
+    templateUrl: './server.html'
 })
-export class ServerComponent implements OnInit {
-    state: any = {};
+export class Server implements OnInit {
+    state = signal<any>({ loaded: false });
 
     @Input() endpoint: string = '';
     payload: any = { a: 'A', b: 'B' }
@@ -24,12 +24,13 @@ export class ServerComponent implements OnInit {
             const putResponse = await this.http.post(this.putUrl(), this.payload).toPromise();
             const deleteResponse = await this.http.get(this.deleteUrl()).toPromise();
 
-            this.state.get = JSON.stringify(getResponse);
-            this.state.post = JSON.stringify(postResponse);
-            this.state.put = JSON.stringify(putResponse);
-            this.state.delete = JSON.stringify(deleteResponse);
-
-            this.state.loaded = true;
+            this.state.set({
+                get: JSON.stringify(getResponse),
+                post: JSON.stringify(postResponse),
+                put: JSON.stringify(putResponse),
+                delete: JSON.stringify(deleteResponse),
+                loaded: true
+            });
         } catch (error) {
             console.error('Error:', error);
         }

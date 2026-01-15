@@ -1,0 +1,27 @@
+<div>
+    @if (state().loaded) {
+        <section class="server">
+            @for (part of parts(); track $index) {
+                <section class="verb">
+                    <p>
+                        <b>
+                            URL:
+                        </b>
+                        &nbsp;
+                        <span>{{ getUrlByPart(part) }}</span>
+                    </p>
+
+                    <p>
+                        <b>
+                            Response:
+                        </b>
+                        &nbsp;
+                        <span>
+                      {{state()[part]}}
+                  </span>
+                    </p>
+                </section>
+            }
+        </section>
+    }
+</div>
