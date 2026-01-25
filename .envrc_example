@@ -2,3 +2,8 @@
 export PATH=
 
 export PORT=
+
+
+export PATH=$HOME/programs/jq/1.8.1/bin:$PATH
+
+export ALLOWED_HOSTS="skeleton.angular.com"
