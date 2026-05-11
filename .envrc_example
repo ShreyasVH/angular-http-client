@@ -1,9 +1,9 @@
-# node path
+# node 25.8.1 path
 export PATH=
 
 export PORT=
 
-
+# jq 1.8.1 path
 export PATH=$HOME/programs/jq/1.8.1/bin:$PATH
 
 export ALLOWED_HOSTS="skeleton.angular.com"
