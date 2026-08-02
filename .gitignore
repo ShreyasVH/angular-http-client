@@ -6,3 +6,4 @@ compile.log
 npmInstall.log
 angular.json
 dist/
+ncuLog.txt
