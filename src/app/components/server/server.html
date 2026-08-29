@@ -1,8 +1,8 @@
 <div>
     @if (state().loaded) {
-        <section class="server">
+        <section class="server" data-class="server">
             @for (part of parts(); track $index) {
-                <section class="verb">
+                <section class="verb" data-class="verb">
                     <p>
                         <b>
                             URL:
